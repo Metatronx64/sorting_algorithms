@@ -1,9 +1,9 @@
 #include "sort.h"
 
 /**
- * quick_sort - Sorts an array of integers in ascending order using the Quick sort algorithm.
- * @array: The array to be sorted.
- * @size: The size of the array.
+ * quick_sort - Sorts an array of integers in ascending order using the Quick sort algorithm
+ * @array: The array to be sorted
+ * @size: The size of the array
  *
  * Return: void
  */
@@ -16,18 +16,18 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- * partition - Partitions the array and selects a pivot element for Quick sort.
- * @array: The array to be partitioned.
- * @lo: The lower bound index.
- * @hi: The higher bound index.
- * @size: The size of the array.
+ * partition - Chooses a pivot element and partitions the array around it
+ * @array: The array to be partitioned
+ * @lo: The lower index
+ * @hi: The higher index
+ * @size: The size of the array
  *
- * Return: The updated pivot index.
+ * Return: The index of the pivot element
  */
 int partition(int *array, int lo, int hi, size_t size)
 {
 	int i = lo - 1, j = lo;
-	int pivot = array[hi], temp = 0;
+	int pivot = array[hi], aux = 0;
 
 	for (; j < hi; j++)
 	{
@@ -36,29 +36,29 @@ int partition(int *array, int lo, int hi, size_t size)
 			i++;
 			if (array[i] != array[j])
 			{
-				temp = array[i];
+				aux = array[i];
 				array[i] = array[j];
-				array[j] = temp;
+				array[j] = aux;
 				print_array(array, size);
 			}
 		}
 	}
 	if (array[i + 1] != array[hi])
 	{
-		temp = array[i + 1];
+		aux = array[i + 1];
 		array[i + 1] = array[hi];
-		array[hi] = temp;
+		array[hi] = aux;
 		print_array(array, size);
 	}
 	return (i + 1);
 }
 
 /**
- * quick_s - Recursively performs Quick sort on the array.
- * @array: The array to be sorted.
- * @lo: The lower bound index.
- * @hi: The higher bound index.
- * @size: The size of the array.
+ * quick_s - Implements the Quick sort algorithm recursively
+ * @array: The array to be sorted
+ * @lo: The lower index
+ * @hi: The higher index
+ * @size: The size of the array
  *
  * Return: void
  */
