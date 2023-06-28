@@ -1,10 +1,10 @@
 #include "sort.h"
 
 /**
- * quick_sort - Sorts an array of integers in ascending order using the Quick sort algorithm
- * @array: The array to be sorted
- * @size: The size of the array
- *
+ * quick_sort - function that sorts an array of integers
+ *              in ascending order using the Quick sort algorithm
+ * @array: array
+ * @size: array's size
  * Return: void
  */
 void quick_sort(int *array, size_t size)
@@ -16,13 +16,12 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- * partition - Chooses a pivot element and partitions the array around it
- * @array: The array to be partitioned
- * @lo: The lower index
- * @hi: The higher index
- * @size: The size of the array
- *
- * Return: The index of the pivot element
+ * partition - partition
+ * @array: array
+ * @lo: lower
+ * @hi: higher
+ * @size: array's size
+ * Return: i
  */
 int partition(int *array, int lo, int hi, size_t size)
 {
@@ -54,12 +53,11 @@ int partition(int *array, int lo, int hi, size_t size)
 }
 
 /**
- * quick_s - Implements the Quick sort algorithm recursively
- * @array: The array to be sorted
- * @lo: The lower index
- * @hi: The higher index
- * @size: The size of the array
- *
+ * quick_s - quick sort
+ * @array: given array
+ * @lo: lower
+ * @hi:higher
+ * @size: array's size
  * Return: void
  */
 void quick_s(int *array, int lo, int hi, size_t size)
@@ -73,4 +71,3 @@ void quick_s(int *array, int lo, int hi, size_t size)
 		quick_s(array, pivot + 1, hi, size);
 	}
 }
-
